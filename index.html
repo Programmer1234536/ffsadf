@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fox Project Cinematic</title>
+
+<style>
+/* =========================
+   BASE FIX
+========================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #05060a;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+.bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at top, rgba(255,140,0,0.18), transparent 40%),
+    radial-gradient(circle at bottom, rgba(120,0,255,0.15), transparent 50%);
+  z-index: -1;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  z-index: 10;
+}
+
+nav .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: orange;
+}
+
+nav img {
+  height: 35px;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: orange;
+}
+
+/* =========================
+   SECTIONS SAFE WIDTH FIX
+========================= */
+section {
+  padding: 120px 40px;
+  max-width: 1000px;
+  margin: auto;
+  overflow-x: hidden;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* LOGO IN HOME (NEW FIX) */
+.hero img {
+  width: 170px;
+  margin-bottom: 10px;
+  animation: fadeIn 1.2s ease;
+}
+
+.hero h1 {
+  font-size: 85px;
+  color: orange;
+  text-shadow: 0 0 40px orange;
+  margin: 0;
+  animation: zoom 1.5s ease;
+}
+
+.hero p {
+  max-width: 650px;
+  color: #aaa;
+}
+
+@keyframes zoom {
+  from { transform: scale(1.2); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   CARDS
+========================= */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  width: 280px;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: orange;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+.timeline {
+  border-left: 2px solid orange;
+  padding-left: 25px;
+}
+
+.item {
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background: orange;
+  border-radius: 50%;
+  box-shadow: 0 0 10px orange;
+}
+
+.date {
+  color: orange;
+  font-weight: bold;
+}
+
+/* =========================
+   VISION FIX (IMPORTANT)
+========================= */
+#vision {
+  max-width: 900px;
+}
+
+.box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+.fade {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: 0.7s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="left">
+    <img src="logo.png">
+    Fox Project
+  </div>
+
+  <div>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#studios">Studios</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#vision">Vision</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="hero fade">
+
+  <!-- LOGO FIXED (NEW) -->
+  <img src="logo.png" alt="logo">
+
+  <h1>FOX PROJECT</h1>
+
+  <p>
+    A cinematic ecosystem of software, education platforms, game studios and media production systems.
+  </p>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="fade">
+  <h2 style="color:orange">About Fox Project</h2>
+
+  <p>
+    Fox Project is a long-term digital ecosystem designed to connect education, media and creative studios
+    into one unified system.
+  </p>
+
+  <p>
+    It is not just a website - it is a structured universe of interconnected platforms, including Fox Edu Platform, Fox Games - Polish game studio, and Fox Media Studio.
+
+What makes it even more unique is that the entire ecosystem was created by a single person - a 12-year-old builder, designer, programmer and creator - who is developing all of these systems independently.
+
+This is not a collection of random projects. It is one cohesive digital world designed, built, and continuously expanded by one mind.
+  </p>
+</section>
+
+<!-- STUDIOS -->
+<section id="studios" class="fade">
+  <h2 style="color:orange">Studios</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Fox Edu Platform</h3>
+      <p>Full school SaaS system with roles, classes, grades and communication tools.</p>
+    </div>
+
+    <div class="card">
+      <h3>Fox Games - Polish Game Studio</h3>
+      <p>Dark atmospheric game production focused on narrative experiences.</p>
+    </div>
+
+    <div class="card">
+      <h3>Fox Media Studio</h3>
+      <p>Cinematic documentary and storytelling production studio.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline" class="fade">
+  <h2 style="color:orange">Timeline</h2>
+
+  <div class="timeline">
+
+    <div class="item">
+      <div class="date">January 2025</div>
+      <h3>Fox Project Foundation</h3>
+      <p>First concept of a digital ecosystem combining education and media systems.</p>
+    </div>
+
+    <div class="item">
+      <div class="date">February 2025</div>
+      <h3>Fox Games - Polish Game Studio</h3>
+      <p>Creation of a dark storytelling-focused game studio.</p>
+    </div>
+
+    <div class="item">
+      <div class="date">March 2025</div>
+      <h3>Fox Edu Platform</h3>
+      <p>Launch of full school SaaS system with roles and grading system.</p>
+    </div>
+
+    <div class="item">
+      <div class="date">April 2025</div>
+      <h3>Fox Media Studio</h3>
+      <p>Expansion into cinematic production and documentaries.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- VISION (FIXED) -->
+<section id="vision" class="fade">
+  <h2 style="color:orange">Vision</h2>
+
+  <div class="box">
+    <p>
+      Fox Project aims to build a full digital universe where education, entertainment and media
+      are part of one connected ecosystem.
+    </p>
+
+    <p>
+      Each studio evolves independently but follows the same philosophy:
+      cinematic quality, modern design and long-term scalability.
+    </p>
+  </div>
+</section>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
